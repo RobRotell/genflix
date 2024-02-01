@@ -1,0 +1,40 @@
+{
+	"name": "genflix",
+	"version": "0.0.1",
+	"private": true,
+	"description": "A streaming library for all of your favorite AI-generated movies!",
+	"author": "Rob Rotell",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/RobRotell/genflix.git"
+	},
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/RobRotell/genflix/issues"
+	},
+	"homepage": "https://github.com/RobRotell/genflix#readme",	
+	"scripts": {
+		"develop": "gatsby develop",
+		"start": "gatsby develop",
+		"build": "gatsby build",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean"
+	},
+	"dependencies": {
+		"babel-plugin-styled-components": "^2.1.4",
+		"gatsby": "^2.13.57",
+		"gatsby-plugin-image": "^0.7.2",
+		"gatsby-plugin-sharp": "^2.14.4",
+		"gatsby-plugin-styled-components": "^3.10.0",
+		"gatsby-source-filesystem": "^2.11.1",
+		"gatsby-transformer-sharp": "^2.12.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"styled-components": "^6.1.8"
+	},
+	"devDependencies": {
+		"eslint": "^8.53.0",
+		"eslint-config-prettier": "^9.0.0",
+		"prettier": "^3.0.3"
+	}
+}
