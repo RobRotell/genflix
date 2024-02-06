@@ -1,7 +1,16 @@
+import dotenv from 'dotenv'
+
+
+dotenv.config({
+	path: '.env'
+})
+
+
 export default {
 	siteMetadata: {
-		title: 'Genflix',
-		siteUrl: 'https://genflix.robr.app',
+		title: 'Synflix',
+		siteUrl: 'https://synflix.robr.app',
+		description: 'A streaming library for all of your favorite AI-generated movies!',
 	},
 	plugins: [
 		'gatsby-plugin-styled-components',
@@ -20,7 +29,7 @@ export default {
 			resolve: 'gatsby-source-rest-api',
 			options: {
 				endpoints: [
-					'https://api.moovi.robr.app/get-movies'
+					process.env.MOOVI_ALL_MOVIES_ENDPOINT_URL
 				],
 			},
 		},

@@ -31,7 +31,7 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 
 	genres.forEach( genre => {
 		actions.createPage({
-			path: `genre/${genre}`,
+			path: `genres/${genre}`,
 			component: template,
 			context: {
 				slug: genre,
