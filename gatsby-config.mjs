@@ -1,9 +1,15 @@
 import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 
 dotenv.config({
 	path: '.env'
 })
+
+
+const __filename = fileURLToPath( import.meta.url )
+const __dirname = path.dirname( __filename )
 
 
 export default {
@@ -41,6 +47,14 @@ export default {
 				],
 				display: 'swap'
 			}
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'movieImages',
+			  	path: `${__dirname}/src/images/movies`,
+				fastHash: true,
+			},
 		},
 		// {
 		// 	resolve: 'gatsby-plugin-remote-images',

@@ -6,7 +6,6 @@ import MovieBillboard from '../components/MovieBillboard'
 
 import { getRandomValueFromArray } from '../utils/getRandomValueFromArray'
 import { mapifyMovies } from '../utils/mapifyMovies'
-import { getRandomNumber } from '../utils/getRandomNumber'
 
 
 export default function HomePage({ data }) {
@@ -25,6 +24,8 @@ export default function HomePage({ data }) {
 	 */
 	const getRandomMovies = ( count, genre = '' ) => {
 		const selections = []
+
+		console.log( movies.size )
 
 		let selectableMovies = movies
 
@@ -47,6 +48,8 @@ export default function HomePage({ data }) {
 			// prevent movie from being picked again
 			movies.delete( movieIndex )
 		}
+
+		console.log( movies.size )
 
 		return selections
 	}
