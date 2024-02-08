@@ -1,4 +1,5 @@
 import path, { resolve } from 'path'
+import slugify from 'slugify'
 
 
 const turnGenresIntoPages = async ({ graphql, actions }) => {
@@ -29,6 +30,7 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 
 	genres = genres.sort()
 
+	// todo -- add movies
 	genres.forEach( genre => {
 		actions.createPage({
 			path: `genres/${genre}`,
@@ -42,7 +44,7 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 }
 
 
-const turnMoviesIntoPages = async ({ graphql, action }) => {
+const turnMoviesIntoPages = async ({ graphql, actions }) => {
 	const template = path.resolve( './src/templates/Movie.js' )
 
 	const { data } = await graphql( `
@@ -65,6 +67,21 @@ const turnMoviesIntoPages = async ({ graphql, action }) => {
 		}
 	` )
 
+	data.allRestApiGetMovies.edges[0].node.movies.forEach( movie => {
+		const movieSlug = slugify( movie.title, {
+			lower: true,
+			strict: true
+		})
+
+		actions.createPage({
+			path: `movies/${movieSlug}`,
+			component: template,
+			context: {
+				movie,
+				slug: movieSlug,
+			}
+		})
+	})
 }
 
 
@@ -72,7 +89,7 @@ export async function createPages( params ) {
 	await Promise.all(
 		[
 			turnGenresIntoPages( params ),
-			// turnMoviesIntoPages( params )
+			turnMoviesIntoPages( params )
 		]
 	)
 }

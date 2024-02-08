@@ -33,5 +33,21 @@ export default {
 				],
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-google-fonts',
+			options: {
+				fonts: [
+					'inter:400,600,700',
+				],
+				display: 'swap'
+			}
+		},
+		// {
+		// 	resolve: 'gatsby-plugin-remote-images',
+		// 	options: {
+		// 	  	nodeType: 'RestApiGetMovies',
+		// 		imagePath: 'nodes.imageUrl',
+		// 	},
+		// }
 	]
 }
