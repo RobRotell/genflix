@@ -1,0 +1,24 @@
+@import 'normalize.css';
+@import './variables.css';
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	min-height: 100vh;
+}
+
+body {
+	max-width: 1246px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 26px 36px;
+	font-family: var(--fontFamily);
+	font-weight: var(--fontWeight);
+	font-size: var(--fontSize);
+	background-color: var(--colorDarkGray);
+}

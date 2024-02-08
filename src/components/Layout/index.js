@@ -1,13 +1,15 @@
 import React from 'react'
-import 'normalize.css'
-import './style.module.css'
 
+import Header from '../Header'
+import Footer from '../Footer'
+
+import '../../styles/global.css'
 
 const Layout = ({ children }) => (
     <>
-		{/* <Header /> */}
+		{<Header />}
         {children}
-    	{/* <Footer /> */}
+		{<Footer />}
     </>
 )
 
