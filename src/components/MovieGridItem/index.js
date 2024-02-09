@@ -3,6 +3,7 @@ import path from 'path-browserify'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { createMovieUrl } from '../../utils/createMovieUrl'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import * as styles from './style.module.css'
 
 
 export default function MovieGridItem({ headline, link, linkText, movie }) {
@@ -16,7 +17,10 @@ export default function MovieGridItem({ headline, link, linkText, movie }) {
 				nodes {
 					base
 					childImageSharp {
-						gatsbyImageData( width: 320, height: 220, formats: [ AUTO, WEBP, AVIF ] ),
+						gatsbyImageData(
+							layout: FULL_WIDTH,
+							formats: [ AUTO, WEBP, AVIF ]
+						),
 					}
 				}
 			}
@@ -26,18 +30,20 @@ export default function MovieGridItem({ headline, link, linkText, movie }) {
 	const movieImgObj = query.allFile.nodes.find( node => imageBaseName === node.base ).childImageSharp.gatsbyImageData
 
 	return (
-		<>
-			<h2 className="movie-headline">{ movie.title }</h2>
-
-			<Link to={createMovieUrl( title )}>More Info</Link>
-
+		<Link to={createMovieUrl( title )} className={styles.block}>
+			<div className={styles.meta}>
+				<h3 className={styles.headline}>{ movie.title }</h3>
+				<div className={styles.pseudoLink}>chevron</div>
+				<div className={styles.overlay}></div>
+			</div>
 			<GatsbyImage
+				className={styles.pic}
+				imgClassName={styles.img}
 				image={movieImgObj}
 				alt={`Poster for "${title}"`}
 				title={`Poster for "${title}"`}
-				height={800}
-				loading="eager"
+				loading="lazy"
 			/>
-		</>
+		</Link>
 	)
 }

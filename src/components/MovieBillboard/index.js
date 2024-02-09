@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { createMovieUrl } from '../../utils/createMovieUrl'
-import { GatsbyImage, StaticImage, getImage } from 'gatsby-plugin-image'
-import { getImagePathFromUrl } from '../../utils/getImagePathFromUrl'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import path from 'path-browserify'
 
 
@@ -17,8 +16,8 @@ const MovieBillboard = ({ data, movie }) => {
 				nodes {
 					base
 					childImageSharp {
-						gatsbyImageData( width: 1246, height: 800, formats: [ AUTO, WEBP, AVIF ] ),
-						fluid(maxWidth: 500, quality: 100) {
+						gatsbyImageData( width: 1440, height: 800, quality: 80, breakpoints: [ 600, 768, 1024, 1366], formats: [ AUTO, WEBP, AVIF ] ),
+						fluid(maxWidth: 1440, quality: 100) {
 							...GatsbyImageSharpFluid
 							...GatsbyImageSharpFluidLimitPresentationSize
 						}
