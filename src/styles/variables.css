@@ -5,6 +5,11 @@
 	--colorWhite: #fff;
 
 	--fontFamily: 'Inter', sans-serif;
-	--fontWeight: 400;
+	--fontWeightReg: 400;
+	--fontWeightMedium: 500;
+	--fontWeightSemiBold: 600;
+	--fontWeightBold: 700;
 	--fontSize: 16px;
+
+	--transitionSpeed: 0.2s;
 }
