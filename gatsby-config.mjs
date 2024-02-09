@@ -19,7 +19,7 @@ export default {
 		description: 'A streaming library for all of your favorite AI-generated movies!',
 	},
 	plugins: [
-		'gatsby-plugin-styled-components',
+		// 'gatsby-plugin-styled-components',
 		'gatsby-plugin-image',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
