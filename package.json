@@ -27,7 +27,6 @@
 		"gatsby-plugin-image": "^3.13.1",
 		"gatsby-plugin-remote-images": "^3.6.6",
 		"gatsby-plugin-sharp": "^5.13.1",
-		"gatsby-plugin-styled-components": "^6.13.1",
 		"gatsby-source-filesystem": "^5.13.1",
 		"gatsby-source-rest-api": "^0.2.3",
 		"gatsby-transformer-sharp": "^5.13.1",
@@ -44,5 +43,9 @@
 		"eslint-config-prettier": "^9.0.0",
 		"esm": "^3.2.25",
 		"prettier": "^3.0.3"
-	}
+	},
+	"browserslist": [
+		"> 1%",
+		"not dead"
+	]
 }
