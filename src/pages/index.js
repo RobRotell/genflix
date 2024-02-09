@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import MovieSpotlightGrid from '../components/MovieSpotlightGrid'
+import MovieGrid from '../components/MovieGrid'
 import MovieBillboard from '../components/MovieBillboard'
 
 import { getRandomValueFromArray } from '../utils/getRandomValueFromArray'
@@ -25,8 +25,6 @@ export default function HomePage({ data }) {
 	const getRandomMovies = ( count, genre = '' ) => {
 		const selections = []
 
-		console.log( movies.size )
-
 		let selectableMovies = movies
 
 		// if provided, pull movies only from genre
@@ -47,9 +45,8 @@ export default function HomePage({ data }) {
 
 			// prevent movie from being picked again
 			movies.delete( movieIndex )
+			selectableMovies.delete( movieIndex )
 		}
-
-		console.log( movies.size )
 
 		return selections
 	}
@@ -62,58 +59,59 @@ export default function HomePage({ data }) {
 				/>
 			}
 			{
-				<MovieSpotlightGrid
+				<MovieGrid
 					headline="New Releases"
-					link=""
-					movies={ getRandomMovies( 5 ) }
+					movies={ getRandomMovies( 4 ) }
 				/>
 			}
 
 			{
-				<MovieSpotlightGrid
+				<MovieGrid
 					headline="Trending Now"
-					link=""
-					movies={ getRandomMovies( 5 ) }
+					movies={ getRandomMovies( 4 ) }
 				/>
 			}
 
 			{
-				<MovieSpotlightGrid
+				<MovieGrid
 					headline="We Think You'll Love These"
-					link=""
-					movies={ getRandomMovies( 5 ) }
+					movies={ getRandomMovies( 4 ) }
 				/>
 			}
 
 			{
-				<MovieSpotlightGrid
+				<MovieGrid
 					headline="Action-Packed Rides"
-					link=""
-					movies={ getRandomMovies( 5, 'action' ) }
+					link="/genres/action"
+					linkText="View All Action Movies"
+					movies={ getRandomMovies( 4, 'action' ) }
 				/>
 			}
 
 			{
-				<MovieSpotlightGrid
-					headline="Spooky Flicks"
-					link=""
-					movies={ getRandomMovies( 5, 'horror' ) }
+				<MovieGrid
+					headline="Spooky Frights"
+					link="/genres/horror"
+					linkText="View All Horror Movies"
+					movies={ getRandomMovies( 4, 'horror' ) }
 				/>
 			}
 
 			{
-				<MovieSpotlightGrid
+				<MovieGrid
 					headline="Not So Serious Romps"
-					link=""
-					movies={ getRandomMovies( 5, 'comedy' ) }
+					link="/genres/comedy"
+					linkText="View All Comedy Movies"
+					movies={ getRandomMovies( 4, 'comedy' ) }
 				/>
 			}
 
 			{
-				<MovieSpotlightGrid
-					headline="Date Night Ideas"
-					link=""
-					movies={ getRandomMovies( 5, 'romance' ) }
+				<MovieGrid
+					headline="Date Night Flicks"
+					link="/genres/romance"
+					linkText="View All Romance Movies"
+					movies={ getRandomMovies( 4, 'romance' ) }
 				/>
 			}
 
