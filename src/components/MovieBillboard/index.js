@@ -1,11 +1,13 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import { createMovieUrl } from '../../utils/createMovieUrl'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import path from 'path-browserify'
+import * as styles from './style.module.css'
+import SimpleButton from '../SimpleButton'
 
 
-const MovieBillboard = ({ data, movie }) => {
+const MovieBillboard = ({ movie }) => {
 	const { title, tagline, imageUrl } = movie
 	const imageBaseName = path.basename( imageUrl )
 
@@ -30,20 +32,26 @@ const MovieBillboard = ({ data, movie }) => {
 	const movieImgObj = query.allFile.nodes.find( node => imageBaseName === node.base ).childImageSharp.gatsbyImageData
 
 	return (
-		<>
-			<h2 className="movie-headline">{ title }</h2>
-			<p className="movie-description">{ tagline }</p>
+		<div className={styles.billboard}>
 
-			<Link to={createMovieUrl( title )}>More Info</Link>
+			<div className={styles.metaWrapper}>
+				<div className={styles.meta}>
+					<h2 className={styles.title}>{ title }</h2>
+					<p className={styles.description}>{ tagline }</p>
+					<SimpleButton linkTo={createMovieUrl( title )} style="light">More Info</SimpleButton>
+				</div>
+			</div>
 
 			<GatsbyImage
+				className={styles.pic}
+				imgClassName={styles.img}
 				image={movieImgObj}
 				alt={`Poster for "${title}"`}
 				title={`Poster for "${title}"`}
 				height={800}
 				loading="eager"
 			/>
-		</>
+		</div>
 	)
 }
 
