@@ -6,6 +6,7 @@ import MovieBillboard from '../components/MovieBillboard'
 
 import { getRandomValueFromArray } from '../utils/getRandomValueFromArray'
 import { mapifyMovies } from '../utils/mapifyMovies'
+import FixedContainer from '../components/FixedContainer'
 
 
 export default function HomePage({ data }) {
@@ -53,68 +54,47 @@ export default function HomePage({ data }) {
 
 	return (
 		<>
-			{
-				<MovieBillboard
-					movie={ getRandomMovies( 1 )[0] }
-				/>
-			}
-			{
+			<MovieBillboard
+				movie={ getRandomMovies( 1 )[0] }
+			/>
+			<FixedContainer>
 				<MovieGrid
 					headline="New Releases"
 					movies={ getRandomMovies( 4 ) }
 				/>
-			}
-
-			{
 				<MovieGrid
 					headline="Trending Now"
 					movies={ getRandomMovies( 4 ) }
 				/>
-			}
-
-			{
 				<MovieGrid
 					headline="We Think You'll Love These"
 					movies={ getRandomMovies( 4 ) }
 				/>
-			}
-
-			{
 				<MovieGrid
 					headline="Action-Packed Rides"
 					link="/genres/action"
-					linkText="View All Action Movies"
+					linkText="View all Action movies"
 					movies={ getRandomMovies( 4, 'action' ) }
 				/>
-			}
-
-			{
 				<MovieGrid
 					headline="Spooky Frights"
 					link="/genres/horror"
-					linkText="View All Horror Movies"
+					linkText="View all Horror movies"
 					movies={ getRandomMovies( 4, 'horror' ) }
 				/>
-			}
-
-			{
 				<MovieGrid
 					headline="Not So Serious Romps"
 					link="/genres/comedy"
-					linkText="View All Comedy Movies"
+					linkText="View all Comedy movies"
 					movies={ getRandomMovies( 4, 'comedy' ) }
 				/>
-			}
-
-			{
 				<MovieGrid
 					headline="Date Night Flicks"
 					link="/genres/romance"
-					linkText="View All Romance Movies"
+					linkText="View all Romance movies"
 					movies={ getRandomMovies( 4, 'romance' ) }
 				/>
-			}
-
+			</FixedContainer>
 		</>
 	)
 }
