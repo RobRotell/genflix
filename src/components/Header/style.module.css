@@ -1,0 +1,60 @@
+.header {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: fit-content;
+	display: flex;
+	place-items: center;
+	padding: 40px 24px;
+	z-index: 100000;
+
+	@media(width >=1024px) {
+		padding-top: 60x;
+		padding-bottom: 60px;
+	}
+}
+
+.navContainer {
+	margin-left: auto;
+}
+
+.hamburgerBtn {
+	display: block;
+	margin-left: auto;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+
+	@media(width >=1024px) {
+		display: none;
+	}
+
+	.line {
+		display: block;
+		width: 46px;
+		height: 8px;
+		margin-bottom: 8px;
+		background-color: var(--colorWhite);
+		border-radius: 6px;
+		transition: var(--transitionSpeed) background-color linear;
+	}
+
+	&:hover .line {
+		background-color: var(--colorRed);
+	}
+}
+
+.nav {
+	position: fixed;
+	inset: 160px 0 0;
+	width: 100vw;
+	height: calc(100vh - 160px);
+	transform: translateX(100%);
+	transition: var(--transitionSpeed) transform linear;
+	backdrop-filter: blur(24px);
+}
+
+.navIsActive {
+	transform: translateX(0);
+}
