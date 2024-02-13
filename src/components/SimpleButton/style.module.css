@@ -1,0 +1,20 @@
+.btn {
+	display: block;
+	width: fit-content;
+	font-weight: var(--fontWeightSemiBold);
+	font-size: 16px;
+	padding: 14px 32px;
+	border-radius: 6px;
+	text-decoration: none;
+	transition: var(--transitionSpeed) color linear, var(--transitionSpeed) background linear;
+}
+
+.btnLight {
+	color: var(--colorDarkGray);
+	background-color: var(--colorWhite);
+
+	&:hover {
+		color: var(--colorWhite);
+		background-color: var(--colorRed);
+	}
+}
