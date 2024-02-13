@@ -6,12 +6,10 @@ import { Link } from 'gatsby'
 
 const MovieGrid = ({ movies, headline, link, linkText }) => {
 
-	console.log( headline, link )
-
 	return (
-		<section className={styles.movieGrid}>
-			{ headline ? ( <h2 className={styles.movieGridHeadline}>{ headline }</h2> ) : '' }
-			<div className={styles.movieGridItems}>
+		<section className={styles.grid}>
+			{ headline ? ( <h2 className={styles.headline}>{ headline }</h2> ) : '' }
+			<div className={styles.items}>
 				{movies.map( movie => {
 					return (
 						<MovieGridItem
@@ -21,7 +19,7 @@ const MovieGrid = ({ movies, headline, link, linkText }) => {
 					)
 				})}
 			</div>
-			{ link && linkText ? ( <Link to={link} className={styles.movieGridLink}>{ linkText }</Link> ) : '' }
+			{ link && linkText ? ( <Link to={link} className={styles.link}>{ linkText }</Link> ) : '' }
 		</section>
 
 	)
