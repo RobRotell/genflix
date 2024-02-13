@@ -4,7 +4,6 @@ import slugify from 'slugify'
 
 const turnGenresIntoPages = async ({ graphql, actions }) => {
 	const template = path.resolve( './src/templates/Genre.js' )
-	let genres = []
 
 	const { data } = await graphql( `
 		query {
@@ -12,7 +11,13 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 				edges {
 					node {
 						movies {
+							id
+							title
+							tagline
+							director
 							genre
+							year
+							imageUrl
 						}
 					}
 				}
@@ -20,24 +25,27 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 		}
 	` )
 
-	data.allRestApiGetMovies.edges[0].node.movies.forEach( node => {
-		const { genre } = node
+	const genreMap = new Map
 
-		if( !genres.includes( genre ) ) {
-			genres.push( genre )
+	data.allRestApiGetMovies.edges[0].node.movies.forEach( movie => {
+		const { genre } = movie
+
+		if( !genreMap.has( genre ) ) {
+			genreMap.set( genre, [] )
 		}
+
+		genreMap.get( genre ).push( movie )
 	})
 
-	genres = genres.sort()
-
 	// todo -- add movies
-	genres.forEach( genre => {
+	genreMap.forEach( ( movies, genre ) => {
 		actions.createPage({
 			path: `genres/${genre}`,
 			component: template,
 			context: {
 				slug: genre,
-				genreName: genre,
+				genre,
+				movies,
 			}
 		})
 	})
@@ -73,14 +81,14 @@ const turnMoviesIntoPages = async ({ graphql, actions }) => {
 			strict: true
 		})
 
-		actions.createPage({
-			path: `movies/${movieSlug}`,
-			component: template,
-			context: {
-				movie,
-				slug: movieSlug,
-			}
-		})
+		// actions.createPage({
+		// 	path: `movies/${movieSlug}`,
+		// 	component: template,
+		// 	context: {
+		// 		movie,
+		// 		slug: movieSlug,
+		// 	}
+		// })
 	})
 }
 
