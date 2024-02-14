@@ -71,28 +71,52 @@ export default function HomePage({ data }) {
 					movies={ getRandomMovies( 4 ) }
 				/>
 				<MovieGrid
-					headline="Action-Packed Rides"
+					headline="Action-Packed Adrenaline Rushes"
 					link="/genres/action"
-					linkText="View all Action movies"
+					linkText="View Action Movies"
 					movies={ getRandomMovies( 4, 'action' ) }
 				/>
 				<MovieGrid
-					headline="Spooky Frights"
+					headline="Spooky Heart-Pounding Frights"
 					link="/genres/horror"
-					linkText="View all Horror movies"
+					linkText="View Horror Movies"
 					movies={ getRandomMovies( 4, 'horror' ) }
 				/>
 				<MovieGrid
 					headline="Not So Serious Romps"
 					link="/genres/comedy"
-					linkText="View all Comedy movies"
+					linkText="View Comedy Movies"
 					movies={ getRandomMovies( 4, 'comedy' ) }
 				/>
 				<MovieGrid
-					headline="Date Night Flicks"
+					headline="Date Night Hijinks"
 					link="/genres/romance"
-					linkText="View all Romance movies"
+					linkText="View Romance Movies"
 					movies={ getRandomMovies( 4, 'romance' ) }
+				/>
+				<MovieGrid
+					headline="Infinite Mind-Bending Wonders"
+					link="/genres/science-fiction"
+					linkText="View Science Fiction Movies"
+					movies={ getRandomMovies( 4, 'science fiction' ) }
+				/>
+				<MovieGrid
+					headline="Gun-Slingin' Tall Tales"
+					link="/genres/western"
+					linkText="View Western Movies"
+					movies={ getRandomMovies( 4, 'western' ) }
+				/>
+				<MovieGrid
+					headline="Best of Rubber Hose Cinema"
+					link="/genres/animation"
+					linkText="View Animation Movies"
+					movies={ getRandomMovies( 4, 'animation' ) }
+				/>
+				<MovieGrid
+					headline="Enchanted and Magic Realms"
+					link="/genres/fantasy"
+					linkText="View Fantasy Movies"
+					movies={ getRandomMovies( 4, 'fantasy' ) }
 				/>
 			</FixedContainer>
 		</>
@@ -110,9 +134,7 @@ export const query = graphql`
 						id
 						title
 						tagline
-						director
 						genre
-						year
 						imageUrl
 					}
 				}

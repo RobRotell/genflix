@@ -44,7 +44,7 @@ export default function GenresPage({ data }) {
 						headline={genreUc}
 						link={`/genres/${genre}`}
 						linkText={`View All ${genreUc} Movies`}
-						movies={ movies.toSorted().slice( 0, 4 )}
+						movies={ movies.toSorted().slice( 0, 8 )}
 					/>
 				)
 			} )}
@@ -62,10 +62,7 @@ export const query = graphql`
 					movies {
 						id
 						title
-						tagline
-						director
 						genre
-						year
 						imageUrl
 					}
 				}
