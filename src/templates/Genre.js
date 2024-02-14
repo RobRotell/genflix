@@ -4,7 +4,7 @@ import MovieGrid from '../components/MovieGrid'
 import FixedContainer from '../components/FixedContainer'
 
 
-export default function SingleGenreTemplate({ data, pageContext }) {
+export default function SingleGenreTemplate({ pageContext }) {
 	let { movies } = pageContext
 
 	movies = movies.sort( ( a, b ) => {

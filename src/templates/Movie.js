@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
+import MovieBillboard from '../components/MovieBillboard'
 
 
 export default function SingleMovieTemplate({ data, pageContext }) {
@@ -7,8 +8,9 @@ export default function SingleMovieTemplate({ data, pageContext }) {
 
 	return (
 		<>
-			<h1>{movie.title}</h1>
-			<p>{movie.tagline}</p>
+			<MovieBillboard
+				movie={movie}
+			/>
 		</>
 	)
 }
