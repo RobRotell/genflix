@@ -13,10 +13,7 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 						movies {
 							id
 							title
-							tagline
-							director
 							genre
-							year
 							imageUrl
 						}
 					}
@@ -81,14 +78,14 @@ const turnMoviesIntoPages = async ({ graphql, actions }) => {
 			strict: true
 		})
 
-		// actions.createPage({
-		// 	path: `movies/${movieSlug}`,
-		// 	component: template,
-		// 	context: {
-		// 		movie,
-		// 		slug: movieSlug,
-		// 	}
-		// })
+		actions.createPage({
+			path: `movies/${movieSlug}`,
+			component: template,
+			context: {
+				movie,
+				slug: movieSlug,
+			}
+		})
 	})
 }
 
