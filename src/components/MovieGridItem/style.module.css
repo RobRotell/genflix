@@ -2,8 +2,15 @@
 	position: relative;
 	display: block;
 	overflow: hidden;
+	border: 3px solid transparent;
+	transition: var(--transitionSpeed) transform linear,
+		var(--transitionSpeed) border-color linear;
 
 	&:hover {
+		transform: scale(1.1);
+		z-index: 1000;
+		border-color: white;
+
 		.meta {
 			opacity: 1;
 			visibility: visible;
@@ -30,10 +37,10 @@
 		visibility: hidden;
 		transform: translateY(50px);
 		filter: blur(10px);
-		transition: var(--transitionSpeed) opacity ease-in,
-			var(--transitionSpeed) visibility ease-in,
-			var(--transitionSpeed) transform ease-in,
-			var(--transitionSpeed) filter ease-in;
+		transition: var(--transitionSpeed) opacity linear,
+			var(--transitionSpeed) visibility linear,
+			var(--transitionSpeed) transform linear,
+			var(--transitionSpeed) filter linear;
 	}
 
 	.headline {

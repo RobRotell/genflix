@@ -55,6 +55,10 @@
 				font-size: 50px;
 				color: var(--colorWhite);
 				text-shadow: var(--textShadow);
+
+				@media(width >=1024px) {
+					font-size: 60px;
+				}
 			}
 
 			.description {
@@ -62,11 +66,16 @@
 				margin-bottom: 40px;
 				font-weight: var(--fontWeightSemiBold);
 				font-size: 20px;
+				line-height: 1.4;
 				color: var(--colorWhite);
 				text-shadow: var(--textShadow);
 
 				@media(width >=600px) {
 					display: block;
+				}
+
+				@media(width >=1024px) {
+					font-size: 24px;
 				}
 			}
 
@@ -76,7 +85,6 @@
 			}
 		}
 	}
-
 
 	.pic {
 		position: absolute;

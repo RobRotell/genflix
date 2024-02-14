@@ -1,17 +1,23 @@
 .header {
 	position: fixed;
-	inset: 0;
 	width: 100%;
-	height: fit-content;
+	top: 0;
+	padding-top: 36px;
+	padding-bottom: 36px;
+	z-index: 100000;
+	background-color: transparent;
+	transition: var(--transitionSpeed) background-color linear,
+		var(--transitionSpeed) padding linear;
+	;
+
+	&.hasBg {
+		background-color: var(--colorDarkGray);
+	}
+}
+
+.headerContentContainer {
 	display: flex;
 	place-items: center;
-	padding: 40px 24px;
-	z-index: 100000;
-
-	@media(width >=1024px) {
-		padding-top: 60x;
-		padding-bottom: 60px;
-	}
 }
 
 .navContainer {
@@ -49,10 +55,35 @@
 	position: fixed;
 	inset: 160px 0 0;
 	width: 100vw;
+	padding: 32px 24px;
 	height: calc(100vh - 160px);
 	transform: translateX(100%);
 	transition: var(--transitionSpeed) transform linear;
-	backdrop-filter: blur(24px);
+	background-color: var(--colorDarkGray);
+
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+	}
+
+	.subNavItems {
+		display: none;
+
+		&.subMenuIsActive {
+			display: block;
+		}
+	}
+
+
+	.navItemLink {
+		display: block;
+		width: fit-content;
+		padding: 15px;
+		font-weight: var(--fontWeightSemiBold);
+		font-size: 18px;
+		color: var(--colorWhite);
+		text-decoration: none;
+	}
 }
 
 .navIsActive {

@@ -18,7 +18,8 @@ export default function MovieGridItem({ headline, link, linkText, movie }) {
 					base
 					childImageSharp {
 						gatsbyImageData(
-							layout: FULL_WIDTH,
+							width: 370,
+							height: 210,
 							formats: [ AUTO, WEBP, AVIF ]
 						),
 					}

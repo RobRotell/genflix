@@ -1,6 +1,6 @@
 .logoContainer {
 	display: block;
-	width: 180px;
-	height: 80px;
+	width: var(--width, 180px);
+	height: var(--height, 80px);
 	background-color: var(--colorRed);
 }

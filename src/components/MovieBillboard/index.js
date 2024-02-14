@@ -18,11 +18,12 @@ const MovieBillboard = ({ movie }) => {
 				nodes {
 					base
 					childImageSharp {
-						gatsbyImageData( width: 1440, height: 800, quality: 80, breakpoints: [ 600, 768, 1024, 1366], formats: [ AUTO, WEBP, AVIF ] ),
-						fluid(maxWidth: 1440, quality: 100) {
-							...GatsbyImageSharpFluid
-							...GatsbyImageSharpFluidLimitPresentationSize
-						}
+						gatsbyImageData(
+							width: 1600,
+							height: 800,
+							quality: 80,
+							formats: [ AUTO, WEBP, AVIF ]
+						),
 					}
 				}
 			}

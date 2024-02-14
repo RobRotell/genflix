@@ -21,7 +21,7 @@
 		gap: 10px;
 		grid-template-columns: repeat(2, 1fr);
 
-		@media(width >=1200px) {
+		@media(width >=768px) {
 			gap: 16px;
 			grid-template-columns: repeat(4, 1fr);
 		}
