@@ -2,7 +2,8 @@ import { graphql } from 'gatsby'
 import * as React from 'react'
 import FixedContainer from '../components/FixedContainer'
 import MovieGrid from '../components/MovieGrid'
-import { ucWordString } from '../utils/ucWordsString'
+import { ucWordsString } from '../utils/ucWordsString'
+import Billboard from '../components/Billboard'
 
 
 export default function GenresPage({ data }) {
@@ -21,34 +22,39 @@ export default function GenresPage({ data }) {
 	genreMap = new Map( [ ...genreMap.entries() ].sort() )
 
 	return (
-		<FixedContainer>
-			{Array.from( genreMap ).map( ( [ genre, movies ] ) => {
-				const genreUc = ucWordString( genre )
+		<>
+			<Billboard
+				title="Genres"
+			/>
+			<FixedContainer>
+				{Array.from( genreMap ).map( ( [ genre, movies ] ) => {
+					const genreUc = ucWordsString( genre )
 
-				movies = movies.sort( ( a, b ) => {
-					const aTitle = a.title.toLowerCase()
-					const bTitle = b.title.toLowerCase()
+					movies = movies.sort( ( a, b ) => {
+						const aTitle = a.title.toLowerCase()
+						const bTitle = b.title.toLowerCase()
 
-					if( aTitle < bTitle ) {
-						return -1
-					} else if( bTitle < aTitle ) {
-						return 1
-					} else {
-						return 0
-					}
-				})
+						if( aTitle < bTitle ) {
+							return -1
+						} else if( bTitle < aTitle ) {
+							return 1
+						} else {
+							return 0
+						}
+					})
 
-				return (
-					<MovieGrid
-						key={genre}
-						headline={genreUc}
-						link={`/genres/${genre}`}
-						linkText={`View All ${genreUc} Movies`}
-						movies={ movies.toSorted().slice( 0, 8 )}
-					/>
-				)
-			} )}
-		</FixedContainer>
+					return (
+						<MovieGrid
+							key={genre}
+							headline={genreUc}
+							link={`/genres/${genre}`}
+							linkText={`View All ${genreUc} Movies`}
+							movies={ movies.toSorted().slice( 0, 8 )}
+						/>
+					)
+				} )}
+			</FixedContainer>
+		</>
 	)
 }
 

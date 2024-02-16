@@ -2,10 +2,12 @@ import { graphql } from 'gatsby'
 import React from 'react'
 import MovieGrid from '../components/MovieGrid'
 import FixedContainer from '../components/FixedContainer'
+import Billboard from '../components/Billboard'
+import { ucWordsString } from '../utils/ucWordsString'
 
 
 export default function SingleGenreTemplate({ pageContext }) {
-	let { movies } = pageContext
+	let { movies, genre } = pageContext
 
 	movies = movies.sort( ( a, b ) => {
 		const aTitle = a.title.toLowerCase()
@@ -21,10 +23,15 @@ export default function SingleGenreTemplate({ pageContext }) {
 	})
 
 	return (
-		<FixedContainer>
-			<MovieGrid
-				movies={movies}
+		<>
+			<Billboard
+				title={ucWordsString( genre )}
 			/>
-		</FixedContainer>
+			<FixedContainer>
+				<MovieGrid
+					movies={movies}
+				/>
+			</FixedContainer>
+		</>
 	)
 }

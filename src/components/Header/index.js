@@ -46,13 +46,13 @@ const Header = ({ children, data }) => {
 		genreSubMenuRef.current.classList.toggle( styles.subMenuIsActive, !genreSubMenuRef.current.classList.contains( styles.subMenuIsActive ) )
 	}
 
-	window.addEventListener( 'scroll', e => {
+	// window.addEventListener( 'scroll', e => {
 
-		// todo -- troubleshoot bug with ref erroring out when changing pages
-		if( headerRef && headerRef.current ) {
-			headerRef.current.classList.toggle( styles.hasBg, 250 < window.scrollY )
-		}
-	})
+	// 	// todo -- troubleshoot bug with ref erroring out when changing pages
+	// 	if( headerRef && headerRef.current ) {
+	// 		headerRef.current.classList.toggle( styles.hasBg, 250 < window.scrollY )
+	// 	}
+	// })
 
 
 	return (

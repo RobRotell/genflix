@@ -1,12 +1,14 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import MovieGrid from '../components/MovieGrid'
-import MovieBillboard from '../components/MovieBillboard'
+import Billboard from '../components/Billboard'
 
 import { getRandomValueFromArray } from '../utils/getRandomValueFromArray'
 import { mapifyMovies } from '../utils/mapifyMovies'
 import FixedContainer from '../components/FixedContainer'
+import { createMovieUrl } from '../utils/createMovieUrl'
+import path from 'path-browserify'
 
 
 export default function HomePage({ data }) {
@@ -52,10 +54,20 @@ export default function HomePage({ data }) {
 		return selections
 	}
 
+
+	const billboardMovie = getRandomMovies( 1 )[0]
+
+	// create Gatsby image object of movie image
+	const billboardMovieImageObj = data.allFile.nodes.find( node => path.basename( billboardMovie.imageUrl ) === node.base ).childImageSharp.gatsbyImageData
+
 	return (
 		<>
-			<MovieBillboard
-				movie={ getRandomMovies( 1 )[0] }
+			<Billboard
+				title={billboardMovie.title}
+				tagline={billboardMovie.tagline}
+				linkUrl={createMovieUrl( billboardMovie.title )}
+				linkText="More Info"
+				imageObj={billboardMovieImageObj}
 			/>
 			<FixedContainer>
 				<MovieGrid
@@ -137,6 +149,19 @@ export const query = graphql`
 						genre
 						imageUrl
 					}
+				}
+			}
+		}
+		allFile {
+			nodes {
+				base
+				childImageSharp {
+					gatsbyImageData(
+						width: 1600,
+						height: 1000,
+						quality: 80,
+						formats: [ AUTO, WEBP, AVIF ]
+					),
 				}
 			}
 		}

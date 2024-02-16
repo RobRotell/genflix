@@ -3,16 +3,20 @@
 	flex-direction: column;
 	margin-bottom: 50px;
 
+	@media(width >=1200px) {
+		margin-bottom: 60px;
+	}
+
 	.headline {
 		margin-top: 0;
 		margin-bottom: 16px;
 		font-weight: var(--fontWeightSemiBold);
-		font-size: 20px;
+		font-size: 22px;
 		color: var(--colorWhite);
 		text-shadow: var(--textShadow);
 
 		@media(width >=1200px) {
-			font-size: 26px;
+			font-size: 28px;
 		}
 	}
 
@@ -31,7 +35,7 @@
 		margin-top: 14px;
 		place-self: flex-end;
 		font-weight: var(--fontWeightSemiBold);
-		font-size: 14px;
+		font-size: 16px;
 		color: var(--colorWhite);
 		text-decoration: none;
 		transition: var(--transitionSpeed) color linear;
@@ -41,7 +45,7 @@
 		}
 
 		@media(width >=1200px) {
-			font-size: 18px;
+			font-size: 20px;
 		}
 	}
 }

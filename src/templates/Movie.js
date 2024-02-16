@@ -1,15 +1,17 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import MovieBillboard from '../components/MovieBillboard'
+import Billboard from '../components/Billboard'
 
 
-export default function SingleMovieTemplate({ data, pageContext }) {
-	const { movie } = pageContext
+export default function SingleMovieTemplate({ pageContext }) {
+	const { movie, movieImg } = pageContext
 
 	return (
 		<>
-			<MovieBillboard
-				movie={movie}
+			<Billboard
+				title={movie.title}
+				tagline={movie.tagline}
+				imageObj={movieImg}
 			/>
 		</>
 	)

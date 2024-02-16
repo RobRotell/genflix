@@ -6,7 +6,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import * as styles from './style.module.css'
 
 
-export default function MovieGridItem({ headline, link, linkText, movie }) {
+export default function MovieGridItem({ movie }) {
 	const { title, imageUrl } = movie
 	const imageBaseName = path.basename( imageUrl )
 
@@ -18,8 +18,8 @@ export default function MovieGridItem({ headline, link, linkText, movie }) {
 					base
 					childImageSharp {
 						gatsbyImageData(
-							width: 370,
-							height: 210,
+							width: 360,
+							height: 300,
 							formats: [ AUTO, WEBP, AVIF ]
 						),
 					}
@@ -38,8 +38,7 @@ export default function MovieGridItem({ headline, link, linkText, movie }) {
 				<div className={styles.overlay}></div>
 			</div>
 			<GatsbyImage
-				className={styles.pic}
-				imgClassName={styles.img}
+				className={styles.image}
 				image={movieImgObj}
 				alt={`Poster for "${title}"`}
 				title={`Poster for "${title}"`}

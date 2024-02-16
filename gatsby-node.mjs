@@ -40,7 +40,6 @@ const turnGenresIntoPages = async ({ graphql, actions }) => {
 			path: `genres/${genre}`,
 			component: template,
 			context: {
-				slug: genre,
 				genre,
 				movies,
 			}
@@ -69,6 +68,19 @@ const turnMoviesIntoPages = async ({ graphql, actions }) => {
 					}
 				}
 			}
+			allFile {
+				nodes {
+					base
+					childImageSharp {
+						gatsbyImageData(
+							width: 1600,
+							height: 1000,
+							quality: 80,
+							formats: [ AUTO, WEBP, AVIF ]
+						),
+					}
+				}
+			}
 		}
 	` )
 
@@ -78,12 +90,15 @@ const turnMoviesIntoPages = async ({ graphql, actions }) => {
 			strict: true
 		})
 
+		// eslint-disable-next-line max-len
+		const movieImg = data.allFile.nodes.find( node => path.basename( movie.imageUrl ) === node.base ).childImageSharp.gatsbyImageData
+
 		actions.createPage({
 			path: `movies/${movieSlug}`,
 			component: template,
 			context: {
 				movie,
-				slug: movieSlug,
+				movieImg,
 			}
 		})
 	})

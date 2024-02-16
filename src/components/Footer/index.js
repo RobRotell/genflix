@@ -19,25 +19,27 @@ const Footer = ({ children }) => {
 	]
 
 	return (
-		<FixedContainer>
-			<footer className={styles.footer}>
-				<Link to="/" className={styles.logoContainer}>
-					<Logo width={117} height={52} />
-				</Link>
-				<nav className={styles.nav}>
-					{navItems.map( navItem => (
-						<Link
-							key={navItem.link}
-							to={navItem.link}
-							className={styles.navItem}
-						>{navItem.text}</Link>
-					) )}
-				</nav>
-				<a className={styles.githubLink} href="https://github.com/RobRotell/synflix" target="_blank">
-					github logo
-				</a>
-			</footer>
-		</FixedContainer>
+		<footer className={styles.footer}>
+			<FixedContainer>
+				<div className={styles.content}>
+					<Link to="/" className={styles.logoContainer}>
+						<Logo width={117} height={52} />
+					</Link>
+					<nav className={styles.nav}>
+						{navItems.map( navItem => (
+							<Link
+								key={navItem.link}
+								to={navItem.link}
+								className={styles.navItem}
+							>{navItem.text}</Link>
+						) )}
+					</nav>
+					<a className={styles.githubLink} href="https://github.com/RobRotell/synflix" target="_blank">
+						github logo
+					</a>
+				</div>
+			</FixedContainer>
+		</footer>
 	)
 }
 

@@ -1,45 +1,50 @@
 .footer {
-	display: flex;
-	place-items: center;
-	margin-top: 76px;
-	padding-top: 50px;
-	padding-bottom: 60px;
-	border-top: 1px solid var(--colorGray);
+	margin-top: auto;
+	/* this "fixes" the footer to bottom of page */
 
-	@media(width >=1024px) {
-		margin-top: 150px;
-		padding-bottom: 74px;
-	}
-
-	.logoContainer {
-		display: block;
-		width: fit-content;
-		margin-right: 38px;
-	}
-
-	.nav {
-		display: none;
+	.content {
+		display: flex;
+		place-items: center;
+		margin-top: auto;
+		padding-top: 50px;
+		padding-bottom: 60px;
+		border-top: 1px solid var(--colorGray);
 
 		@media(width >=1024px) {
-			display: flex;
+			margin-top: 120px;
+			padding-bottom: 74px;
 		}
 
-	}
-
-	.navItem {
-		margin-right: 30px;
-		font-weight: var(--fontWeightSemiBold);
-		font-size: 16px;
-		color: var(--colorWhite);
-		text-decoration: none;
-		transition: var(--transitionSpeed) color linear;
-
-		&:hover {
-			color: var(--colorRed);
+		.logoContainer {
+			display: block;
+			width: fit-content;
+			margin-right: 38px;
 		}
-	}
 
-	.githubLink {
-		margin-left: auto;
+		.nav {
+			display: none;
+
+			@media(width >=1024px) {
+				display: flex;
+			}
+
+		}
+
+		.navItem {
+			margin-right: 30px;
+			font-weight: var(--fontWeightSemiBold);
+			font-size: 18px;
+			color: var(--colorWhite);
+			text-decoration: none;
+			transition: var(--transitionSpeed) color linear;
+
+			&:hover {
+				color: var(--colorRed);
+			}
+		}
+
+		.githubLink {
+			margin-left: auto;
+		}
 	}
 }

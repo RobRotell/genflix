@@ -4,7 +4,7 @@
  * @param {string} string
  * @return {string}
  */
-export const ucWordString = string => {
+export const ucWordsString = string => {
 	const words = string.split( ' ' )
 
 	words.forEach( ( word, i ) => {

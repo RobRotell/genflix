@@ -25,6 +25,16 @@ export default {
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-emotion',
 		{
+			resolve: 'gatsby-plugin-sharp',
+			options: {
+				defaults: {
+					formats: [ 'auto', 'webp', 'avif' ],
+					quality: 80,
+					breakpoints: [ 600, 768, 1024, 1200, 1600 ],
+				},
+			},
+		},
+		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
 				name: 'images',
