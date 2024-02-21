@@ -1,10 +1,10 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-import { createMovieUrl } from '../../utils/createMovieUrl'
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image'
-import path from 'path-browserify'
-import * as styles from './style.module.css'
+
 import SimpleButton from '../SimpleButton'
+
+import * as styles from './style.module.css'
+
 
 
 const Billboard = ({
@@ -20,6 +20,14 @@ const Billboard = ({
 		if( linkUrl && linkText ) {
 			return (
 				<SimpleButton linkTo={linkUrl} style="light">{linkText}</SimpleButton>
+			)
+		}
+	}
+
+	const maybeRenderTagline = () => {
+		if( tagline ) {
+			return (
+				<p className={styles.description}>{ tagline }</p>
 			)
 		}
 	}
@@ -58,7 +66,7 @@ const Billboard = ({
 			<div className={styles.metaWrapper}>
 				<div className={styles.meta}>
 					<h2 className={styles.title}>{ title }</h2>
-					<p className={styles.description}>{ tagline }</p>
+					{maybeRenderTagline()}
 					{maybeRenderLink()}
 				</div>
 			</div>

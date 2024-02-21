@@ -13,79 +13,9 @@
 	&.hasBg {
 		background-color: var(--colorDarkGray);
 	}
-}
 
-.headerContentContainer {
-	display: flex;
-	place-items: center;
-}
-
-.navContainer {
-	margin-left: auto;
-}
-
-.hamburgerBtn {
-	display: block;
-	margin-left: auto;
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
-	-webkit-appearance: none;
-
-	@media(width >=1024px) {
-		display: none;
+	.content {
+		display: flex;
+		place-items: center;
 	}
-
-	.line {
-		display: block;
-		width: 46px;
-		height: 8px;
-		margin-bottom: 8px;
-		background-color: var(--colorWhite);
-		border-radius: 6px;
-		transition: var(--transitionSpeed) background-color linear;
-	}
-
-	&:hover .line {
-		background-color: var(--colorRed);
-	}
-}
-
-.nav {
-	position: fixed;
-	inset: 160px 0 0;
-	width: 100vw;
-	padding: 32px 24px;
-	height: calc(100vh - 160px);
-	transform: translateX(100%);
-	transition: var(--transitionSpeed) transform linear;
-	background-color: var(--colorDarkGray);
-
-	ul {
-		padding-left: 0;
-		list-style-type: none;
-	}
-
-	.subNavItems {
-		display: none;
-
-		&.subMenuIsActive {
-			display: block;
-		}
-	}
-
-
-	.navItemLink {
-		display: block;
-		width: fit-content;
-		padding: 15px;
-		font-weight: var(--fontWeightSemiBold);
-		font-size: 18px;
-		color: var(--colorWhite);
-		text-decoration: none;
-	}
-}
-
-.navIsActive {
-	transform: translateX(0);
 }

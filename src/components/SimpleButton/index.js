@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+
 import * as styles from './style.module.css'
+
 
 
 const SimpleButton = ({ linkTo, style, children }) => {
@@ -13,6 +15,7 @@ const SimpleButton = ({ linkTo, style, children }) => {
 		classes.push( styles.btnLight )
 	}
 
+
 	return (
 		<Link
 			to={linkTo}
@@ -21,8 +24,6 @@ const SimpleButton = ({ linkTo, style, children }) => {
 			{children}
 		</Link>
 	)
-
-
 }
 
 

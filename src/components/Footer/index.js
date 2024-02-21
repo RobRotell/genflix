@@ -1,8 +1,11 @@
 import React from 'react'
-import FixedContainer from '../FixedContainer'
-import * as styles from './style.module.css'
-import Logo from '../Logo'
 import { Link } from 'gatsby'
+
+import FixedContainer from '../FixedContainer'
+import Logo from '../Logo'
+
+import * as styles from './style.module.css'
+
 
 
 const Footer = ({ children }) => {
@@ -17,6 +20,7 @@ const Footer = ({ children }) => {
 			text: 'About',
 		}
 	]
+
 
 	return (
 		<footer className={styles.footer}>

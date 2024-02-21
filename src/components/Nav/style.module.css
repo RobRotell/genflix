@@ -1,0 +1,178 @@
+.container {
+	margin-left: auto;
+
+	@media(width >=1024px) {
+		flex: 1;
+		margin-left: 60px;
+	}
+}
+
+.hamburgerBtn {
+	display: block;
+	margin-left: auto;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+
+	@media(width >=1024px) {
+		display: none;
+	}
+
+	.line {
+		display: block;
+		width: 46px;
+		height: 8px;
+		margin-bottom: 8px;
+		background-color: var(--colorWhite);
+		border-radius: 6px;
+		transition: var(--transitionSpeed) background-color linear, var(--transitionSpeed) opacity linear, var(--transitionSpeed) transform linear;
+	}
+
+	&.navIsActive {
+		.line:nth-of-type(1) {
+			transform: rotateZ(45deg) translate3d(15px, 15px, 0);
+		}
+
+		.line:nth-of-type(2) {
+			opacity: 0;
+		}
+
+		.line:nth-of-type(3) {
+			transform: rotateZ(-45deg) translate3d(8px, -8px, 0);
+		}
+	}
+}
+
+.nav {
+	position: fixed;
+	inset: 160px 0 0;
+	width: 100vw;
+	padding: 32px 24px;
+	height: calc(100vh - 160px);
+	transform: translateX(100%);
+	background-color: var(--colorDarkGray);
+	overflow-y: scroll;
+
+	@media (width >=1024px) {
+		position: static;
+		width: auto;
+		height: auto;
+		padding: 0;
+		transform: none;
+		background-color: transparent;
+	}
+
+	&.navIsActive {
+		transform: translateX(0);
+	}
+
+	.navItems,
+	.subNavItems {
+		padding-left: 0;
+		list-style-type: none;
+	}
+
+	.navItems {
+		@media(width >=1024px) {
+			display: flex;
+		}
+	}
+
+	.subNavItems {
+		display: none;
+		flex: 1 0 100%;
+		padding-left: 24px;
+
+		&.subMenuIsActive {
+			display: block;
+		}
+	}
+
+	.navItem,
+	.subNavItem {
+		display: flex;
+		flex-wrap: wrap;
+		place-items: center;
+	}
+
+	.navItem {
+		@media(width >=1024px) {
+			&:hover {
+				.subNavItems {
+					position: absolute;
+					top: calc(100% - 18px);
+					display: block;
+					width: 100%;
+					max-width: 300px;
+					padding: 16px;
+					background-color: var(--colorDarkGray);
+
+					.subNavItemLink {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	.navItemLink,
+	.subNavItemLink {
+		display: block;
+		width: fit-content;
+		font-weight: var(--fontWeightSemiBold);
+		color: var(--colorWhite);
+		text-decoration: none;
+		transition: var(--transitionSpeed) color linear;
+
+		&:hover {
+			color: var(--colorRed);
+		}
+	}
+
+	.navItemLink {
+		position: relative;
+		padding: 15px;
+		font-size: 24px;
+
+		@media(width >=1024px) {
+			padding-left: 24px;
+			padding-right: 24px;
+			font-size: 22px;
+		}
+	}
+
+	.subNavItemLink {
+		padding: 12px;
+		font-size: 20px;
+	}
+
+	.subNavBtn {
+		display: flex;
+		width: 40px;
+		height: 40px;
+		place-items: center;
+		place-content: center;
+		margin-left: auto;
+		border: none;
+		border-radius: 50%;
+		background-color: var(--colorRed);
+		cursor: pointer;
+		-webkit-appearance: none;
+
+		.subNavBtnIcon {
+			display: block;
+			transform: rotateZ(90deg);
+			transition: var(--transitionSpeed) transform linear;
+		}
+
+		&.subMenuIsActive .subNavBtnIcon {
+			transform: rotateZ(-90deg);
+		}
+
+		@media(width >=1024px) {
+			display: none;
+		}
+	}
+
+}

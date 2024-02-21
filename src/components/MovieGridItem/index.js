@@ -1,12 +1,15 @@
 import React from 'react'
 import path from 'path-browserify'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { createMovieUrl } from '../../utils/createMovieUrl'
 import { Link, graphql, useStaticQuery } from 'gatsby'
+
+import { createMovieUrl } from '../../utils/createMovieUrl'
+
 import * as styles from './style.module.css'
 
 
-export default function MovieGridItem({ movie }) {
+
+const MovieGridItem = ({ movie }) => {
 	const { title, imageUrl } = movie
 	const imageBaseName = path.basename( imageUrl )
 
@@ -30,6 +33,7 @@ export default function MovieGridItem({ movie }) {
 
 	const movieImgObj = query.allFile.nodes.find( node => imageBaseName === node.base ).childImageSharp.gatsbyImageData
 
+
 	return (
 		<Link to={createMovieUrl( title )} className={styles.block}>
 			<div className={styles.meta}>
@@ -47,3 +51,5 @@ export default function MovieGridItem({ movie }) {
 		</Link>
 	)
 }
+
+export default MovieGridItem

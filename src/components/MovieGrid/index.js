@@ -1,10 +1,14 @@
 import React from 'react'
-import MovieGridItem from '../MovieGridItem'
-import * as styles from './style.module.css'
 import { Link } from 'gatsby'
+
+import MovieGridItem from '../MovieGridItem'
+
+import * as styles from './style.module.css'
+
 
 
 const MovieGrid = ({ movies, headline, link, linkText }) => {
+
 
 	return (
 		<section className={styles.grid}>
@@ -21,7 +25,6 @@ const MovieGrid = ({ movies, headline, link, linkText }) => {
 			</div>
 			{ link && linkText ? ( <Link to={link} className={styles.link}>{ linkText }</Link> ) : '' }
 		</section>
-
 	)
 }
 

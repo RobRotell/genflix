@@ -36,6 +36,10 @@
 	}
 
 	.metaWrapper {
+		--heavyTextShadow: var(--textShadow),
+			0px 0px 40px rgba(20, 20, 20, .95),
+			0px 0px 100px rgba(20, 20, 20, .75),
+			0px 0px 150px rgba(20, 20, 20, .5);
 		width: 100%;
 		max-width: 1440px;
 		margin-left: auto;
@@ -54,7 +58,7 @@
 				font-weight: var(--fontWeightBold);
 				font-size: 60px;
 				color: var(--colorWhite);
-				text-shadow: var(--textShadow);
+				text-shadow: var(--heavyTextShadow);
 
 				@media(width >=1024px) {
 					font-size: 80px;
@@ -67,7 +71,7 @@
 				font-size: 22px;
 				line-height: 1.4;
 				color: var(--colorWhite);
-				text-shadow: var(--textShadow);
+				text-shadow: var(--heavyTextShadow);
 
 				@media(width >=600px) {
 					display: block;
