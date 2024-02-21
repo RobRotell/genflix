@@ -1,6 +1,18 @@
-.logoContainer {
+.container {
 	display: block;
 	width: var(--width, 180px);
 	height: var(--height, 80px);
-	background-color: var(--colorRed);
+
+	.icon {
+		width: 100%;
+		height: 100%;
+
+		&.iconRed {
+			fill: var(--colorRed);
+		}
+
+		&.iconWhite {
+			fill: var(--colorWhite);
+		}
+	}
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import Icon from '../Icon'
 import MovieGridItem from '../MovieGridItem'
 
 import * as styles from './style.module.css'
@@ -23,7 +24,15 @@ const MovieGrid = ({ movies, headline, link, linkText }) => {
 					)
 				})}
 			</div>
-			{ link && linkText ? ( <Link to={link} className={styles.link}>{ linkText }</Link> ) : '' }
+			{ link && linkText ? (
+				<Link to={link} className={styles.link}>
+					{ linkText }
+					<Icon
+						symbol="chevron"
+						className={styles.icon}
+					/>
+				</Link>
+			) : '' }
 		</section>
 	)
 }

@@ -1,8 +1,10 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
+import Billboard from '../components/Billboard'
 import FixedContainer from '../components/FixedContainer'
 import MovieGrid from '../components/MovieGrid'
+import SEO from '../components/SEO'
 
 
 
@@ -24,14 +26,28 @@ const MoviesPage = ({ data }) => {
 
 
 	return (
-		<FixedContainer>
-			<MovieGrid movies={ movies } />
-		</FixedContainer>
+		<>
+			<Billboard
+				title="Movies"
+				tagline="Experience the future of cinema with our cutting-edge AI-generated films. From thrilling suspense to heartwarming drama, we offer something for everyone."
+			/>
+			<FixedContainer>
+				<MovieGrid movies={ movies } />
+			</FixedContainer>
+		</>
 	)
 }
 
 
 export default MoviesPage
+
+
+export const Head = () => (
+	<SEO
+		title="Movies | Synflix"
+		description="Experience the future of cinema with our cutting-edge AI-generated films. From thrilling suspense to heartwarming drama, we offer something for everyone."
+	/>
+)
 
 
 // todo -- fix query so that it only pulls movie of specific genre (conflicts with REST plugin?)

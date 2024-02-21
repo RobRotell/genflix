@@ -43,14 +43,14 @@ const Nav = ({ location }) => {
 	const refHamburgerIcon = useRef( null )
 	const refGenreSubMenuBtn = useRef( null )
 
-	const handleMobileMenuClick = e => {
+	const handleMobileMenuClick = () => {
 		const menuIsActive = refNav.current.classList.contains( styles.navIsActive )
 
 		refNav.current.classList.toggle( styles.navIsActive, !menuIsActive )
 		refHamburgerIcon.current.classList.toggle( styles.navIsActive, !menuIsActive )
 	}
 
-	const handleSubMenuClick = e => {
+	const handleSubMenuClick = () => {
 		const subMenuIsActive = refGenreSubMenu.current.classList.contains( styles.subMenuIsActive )
 
 		refGenreSubMenu.current.classList.toggle( styles.subMenuIsActive, !subMenuIsActive )

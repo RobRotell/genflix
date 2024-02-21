@@ -40,8 +40,20 @@
 		text-decoration: none;
 		transition: var(--transitionSpeed) color linear;
 
+		.icon {
+			margin-left: 12px;
+		}
+
 		&:hover {
 			color: var(--colorRed);
+
+			.icon {
+				fill: var(--colorRed);
+
+				path {
+					stroke: var(--colorRed);
+				}
+			}
 		}
 
 		@media(width >=1200px) {

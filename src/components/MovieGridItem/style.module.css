@@ -58,16 +58,17 @@
 			}
 		}
 
-		.pseudo-link {
-			flex: 0;
+		.pseudoLink {
+			display: flex;
+			place-items: center;
+			place-content: center;
 			width: 32px;
 			height: 32px;
 			z-index: 2000;
+			border-radius: 50%;
+			border: 2px solid var(--colorWhite);
 
-			&:hover {
-				color: var(--colorRed);
-				transition: var(--transitionSpeed) color linear;
-			}
+			.chevron {}
 		}
 
 		.overlay {

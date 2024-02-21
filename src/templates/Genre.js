@@ -4,6 +4,7 @@ import { ucWordsString } from '../utils/ucWordsString'
 import Billboard from '../components/Billboard'
 import FixedContainer from '../components/FixedContainer'
 import MovieGrid from '../components/MovieGrid'
+import SEO from '../components/SEO'
 
 
 
@@ -35,6 +36,18 @@ const SingleGenreTemplate = ({ pageContext }) => {
 				/>
 			</FixedContainer>
 		</>
+	)
+}
+
+
+export const Head = ({ pageContext }) => {
+	const { genre } = pageContext
+
+	return (
+		<SEO
+			title={`${ucWordsString( genre )} Movies | Synflix`}
+			description="Experience the future of cinema with our cutting-edge AI-generated films. From thrilling suspense to heartwarming drama, we offer something for everyone."
+		/>
 	)
 }
 

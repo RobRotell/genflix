@@ -5,6 +5,7 @@ import { ucWordsString } from '../utils/ucWordsString'
 import Billboard from '../components/Billboard'
 import FixedContainer from '../components/FixedContainer'
 import MovieGrid from '../components/MovieGrid'
+import SEO from '../components/SEO'
 
 
 
@@ -28,6 +29,7 @@ const GenresPage = ({ data }) => {
 		<>
 			<Billboard
 				title="Genres"
+				tagline="From timeless classics to the latest blockbusters, we've got everything you need for an unforgettable cinematic journey."
 			/>
 			<FixedContainer>
 				{Array.from( genreMap ).map( ( [ genre, movies ] ) => {
@@ -63,6 +65,14 @@ const GenresPage = ({ data }) => {
 
 
 export default GenresPage
+
+
+export const Head = () => (
+	<SEO
+		title="Genres | Synflix"
+		description="From timeless classics to the latest blockbusters, we've got everything you need for an unforgettable cinematic journey."
+	/>
+)
 
 
 // todo -- fix query so that it only pulls movie of specific genre (conflicts with REST plugin?)

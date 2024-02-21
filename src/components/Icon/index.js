@@ -11,7 +11,7 @@ const IconChevon = ({ symbol = 'chevron', className = '' }) => {
 		if( 'chevron' === symbol ) {
 			return (
 				<span className={className}>
-					<svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<svg className={styles.icon} width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M2.29517 2.08276L7.27682 6.70859L2.29517 11.3344" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
 					</svg>
 				</span>
