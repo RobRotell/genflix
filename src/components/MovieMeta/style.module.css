@@ -1,0 +1,58 @@
+.metaContainer {
+	margin-bottom: 48px;
+	padding-top: 24px;
+	padding-bottom: 36px;
+	font-weight: var(--fontWeightSemiBold);
+	font-size: 18px;
+
+	@media(width >=1024px) {
+		display: flex;
+		font-size: 24px;
+	}
+
+	.metaLeft,
+	.metaRight {
+		padding-right: 36px;
+	}
+
+	.metaLeft {
+		flex: 1;
+
+		.year,
+		.runtime {
+			color: var(--colorLightGray);
+		}
+
+		.runtime {
+			padding-left: 24px;
+		}
+
+		.tagline {
+			margin-top: 24px;
+			margin-bottom: 36px;
+			line-height: 1.3;
+			color: var(--colorWhite);
+		}
+	}
+
+	.metaRight {
+
+		@media(width >=1024px) {
+			flex: 1;
+			max-width: 33%;
+		}
+
+		.metaRow {
+			margin-bottom: 8px;
+
+			.label {
+				color: var(--colorLightGray);
+				padding-right: 12px;
+			}
+
+			.value {
+				color: var(--colorWhite);
+			}
+		}
+	}
+}
