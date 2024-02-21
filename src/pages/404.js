@@ -1,9 +1,13 @@
 import * as React from 'react'
 
 
-export default function NotFoundPage() {
+
+const NotFoundPage = () => {
 
 	return (
-		<>notfound</>
+		<>Page not found!</>
 	)
 }
+
+
+export default NotFoundPage

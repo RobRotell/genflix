@@ -1,17 +1,17 @@
 import * as React from 'react'
+import path from 'path-browserify'
 import { graphql, useStaticQuery } from 'gatsby'
-
-import MovieGrid from '../components/MovieGrid'
-import Billboard from '../components/Billboard'
-
+import { createMovieUrl } from '../utils/createMovieUrl'
 import { getRandomValueFromArray } from '../utils/getRandomValueFromArray'
 import { mapifyMovies } from '../utils/mapifyMovies'
+
+import Billboard from '../components/Billboard'
 import FixedContainer from '../components/FixedContainer'
-import { createMovieUrl } from '../utils/createMovieUrl'
-import path from 'path-browserify'
+import MovieGrid from '../components/MovieGrid'
 
 
-export default function HomePage({ data }) {
+
+const HomePage = ({ data }) => {
 	let movies = data.allRestApiGetMovies.edges[0].node.movies // I know, I know
 
 	// create map for easier setting/removing
@@ -59,6 +59,7 @@ export default function HomePage({ data }) {
 
 	// create Gatsby image object of movie image
 	const billboardMovieImageObj = data.allFile.nodes.find( node => path.basename( billboardMovie.imageUrl ) === node.base ).childImageSharp.gatsbyImageData
+
 
 	return (
 		<>
@@ -134,6 +135,9 @@ export default function HomePage({ data }) {
 		</>
 	)
 }
+
+
+export default HomePage
 
 
 // todo -- fix query so that it only pulls movie of specific genre (conflicts with REST plugin?)

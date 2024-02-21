@@ -1,12 +1,14 @@
-import { graphql } from 'gatsby'
 import * as React from 'react'
+import { graphql } from 'gatsby'
+import { ucWordsString } from '../utils/ucWordsString'
+
+import Billboard from '../components/Billboard'
 import FixedContainer from '../components/FixedContainer'
 import MovieGrid from '../components/MovieGrid'
-import { ucWordsString } from '../utils/ucWordsString'
-import Billboard from '../components/Billboard'
 
 
-export default function GenresPage({ data }) {
+
+const GenresPage = ({ data }) => {
 	let genreMap = new Map
 
 	data.allRestApiGetMovies.edges[0].node.movies.forEach( movie => {
@@ -20,6 +22,7 @@ export default function GenresPage({ data }) {
 	})
 
 	genreMap = new Map( [ ...genreMap.entries() ].sort() )
+
 
 	return (
 		<>
@@ -57,6 +60,9 @@ export default function GenresPage({ data }) {
 		</>
 	)
 }
+
+
+export default GenresPage
 
 
 // todo -- fix query so that it only pulls movie of specific genre (conflicts with REST plugin?)

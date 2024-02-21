@@ -1,9 +1,13 @@
 import * as React from 'react'
 
 
-export default function AboutPage() {
+
+const AboutPage = () => {
 
 	return (
 		<>about</>
 	)
 }
+
+
+export default AboutPage

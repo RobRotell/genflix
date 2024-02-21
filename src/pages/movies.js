@@ -1,10 +1,12 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+
 import FixedContainer from '../components/FixedContainer'
 import MovieGrid from '../components/MovieGrid'
 
 
-export default function MoviesPage({ data }) {
+
+const MoviesPage = ({ data }) => {
 	let movies = data.allRestApiGetMovies.edges[0].node.movies
 
 	movies.sort( ( a, b ) => {
@@ -20,12 +22,16 @@ export default function MoviesPage({ data }) {
 		}
 	})
 
+
 	return (
 		<FixedContainer>
 			<MovieGrid movies={ movies } />
 		</FixedContainer>
 	)
 }
+
+
+export default MoviesPage
 
 
 // todo -- fix query so that it only pulls movie of specific genre (conflicts with REST plugin?)
