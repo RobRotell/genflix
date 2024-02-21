@@ -67,12 +67,5 @@ export default {
 				fastHash: true,
 			},
 		},
-		// {
-		// 	resolve: 'gatsby-plugin-remote-images',
-		// 	options: {
-		// 	  	nodeType: 'RestApiGetMovies',
-		// 		imagePath: 'nodes.imageUrl',
-		// 	},
-		// }
 	]
 }

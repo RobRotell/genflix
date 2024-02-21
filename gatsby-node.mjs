@@ -84,7 +84,9 @@ const turnMoviesIntoPages = async ({ graphql, actions }) => {
 		}
 	` )
 
-	data.allRestApiGetMovies.edges[0].node.movies.forEach( movie => {
+	const allMovies = data.allRestApiGetMovies.edges[0].node.movies
+
+	allMovies.forEach( movie => {
 		const movieSlug = slugify( movie.title, {
 			lower: true,
 			strict: true
@@ -99,6 +101,7 @@ const turnMoviesIntoPages = async ({ graphql, actions }) => {
 			context: {
 				movie,
 				movieImg,
+				allMovies,
 			}
 		})
 	})
