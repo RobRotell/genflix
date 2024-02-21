@@ -1,12 +1,13 @@
-import { graphql } from 'gatsby'
 import React from 'react'
-import MovieGrid from '../components/MovieGrid'
-import FixedContainer from '../components/FixedContainer'
-import Billboard from '../components/Billboard'
 import { ucWordsString } from '../utils/ucWordsString'
 
+import Billboard from '../components/Billboard'
+import FixedContainer from '../components/FixedContainer'
+import MovieGrid from '../components/MovieGrid'
 
-export default function SingleGenreTemplate({ pageContext }) {
+
+
+const SingleGenreTemplate = ({ pageContext }) => {
 	let { movies, genre } = pageContext
 
 	movies = movies.sort( ( a, b ) => {
@@ -22,6 +23,7 @@ export default function SingleGenreTemplate({ pageContext }) {
 		}
 	})
 
+
 	return (
 		<>
 			<Billboard
@@ -35,3 +37,6 @@ export default function SingleGenreTemplate({ pageContext }) {
 		</>
 	)
 }
+
+
+export default SingleGenreTemplate

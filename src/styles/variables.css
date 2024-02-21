@@ -1,6 +1,7 @@
 :root {
 	--colorRed: #E50914;
 	--colorDarkGray: #141414;
+	--colorLightGray: #BDBDBD;
 	--colorGray: #545454;
 	--colorWhite: #fff;
 
@@ -10,6 +11,8 @@
 	--fontWeightSemiBold: 600;
 	--fontWeightBold: 700;
 	--fontSize: 16px;
+
+	--roundedCorner: 6px;
 
 	--transitionSpeed: 0.2s;
 
