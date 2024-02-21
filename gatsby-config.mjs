@@ -19,7 +19,6 @@ export default {
 		description: 'A streaming library for all of your favorite AI-generated movies!',
 	},
 	plugins: [
-		// 'gatsby-plugin-styled-components',
 		'gatsby-plugin-image',
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
@@ -51,14 +50,26 @@ export default {
 			},
 		},
 		{
-			resolve: 'gatsby-plugin-google-fonts',
+			resolve: 'gatsby-plugin-manifest',
 			options: {
-				fonts: [
-					'inter:400,600,700',
-				],
-				display: 'swap'
-			}
+			  	name: 'Synflix',
+			  	short_name: 'Synflix',
+			  	start_url: '/',
+			  	background_color: '#1F1F1F',
+			  	theme_color: '#E50914',
+			  	display: 'standalone',
+				icon: 'src/images/favicon.png',
+			},
 		},
+		// { // replaced with fontsource
+		// 	resolve: 'gatsby-plugin-google-fonts',
+		// 	options: {
+		// 		fonts: [
+		// 			'inter:400,600,700',
+		// 		],
+		// 		display: 'swap'
+		// 	}
+		// },
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
