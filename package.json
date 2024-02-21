@@ -23,6 +23,7 @@
 		"@emotion/react": "^11.11.3",
 		"@emotion/styled": "^11.11.0",
 		"babel-plugin-styled-components": "^2.1.4",
+		"dayjs": "^1.11.10",
 		"dotenv": "^16.4.1",
 		"gatsby": "^5.13.3",
 		"gatsby-plugin-emotion": "^8.13.1",
