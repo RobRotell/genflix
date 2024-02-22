@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { ucWordsString } from '../../utils/ucWordsString'
@@ -9,7 +9,7 @@ import * as styles from './style.module.css'
 
 
 
-const Nav = ({ location }) => {
+const Nav = ({ location: { pathname } }) => {
 
 	// get genres to appear as submenu items
 	// todo -- optimize query
@@ -57,6 +57,15 @@ const Nav = ({ location }) => {
 		refGenreSubMenuBtn.current.classList.toggle( styles.subMenuIsActive, !subMenuIsActive )
 	}
 
+	// detect page change and auto-hide menu
+	useEffect( () => {
+		refNav.current.classList.remove( styles.navIsActive )
+		refHamburgerIcon.current.classList.remove( styles.navIsActive )
+
+		refGenreSubMenu.current.classList.remove( styles.subMenuIsActive )
+		refGenreSubMenuBtn.current.classList.remove( styles.subMenuIsActive )
+	}, [ pathname ] )
+
 
 	return (
 		<div className={styles.container}>
@@ -75,7 +84,11 @@ const Nav = ({ location }) => {
 				<ul className={styles.navItems}>
 
 					<li className={styles.navItem}>
-						<Link to="/genres" className={styles.navItemLink}>
+						<Link
+							to="/genres"
+							className={styles.navItemLink}
+							activeClassName={styles.navItemLinkActive}
+						>
 							Genres
 						</Link>
 
@@ -94,7 +107,11 @@ const Nav = ({ location }) => {
 						<ul className={styles.subNavItems} ref={refGenreSubMenu}>
 							{genres.map( genre => (
 								<li key={genre} className={styles.subNavItem}>
-									<Link className={styles.subNavItemLink} to={`/genres/${genre}`}>
+									<Link
+										to={`/genres/${genre}`}
+										className={styles.subNavItemLink}
+										activeClassName={styles.subNavItemLinkActive}
+									>
 										{ucWordsString( genre )}
 									</Link>
 								</li>
@@ -103,7 +120,11 @@ const Nav = ({ location }) => {
 					</li>
 
 					<li className={styles.navItem}>
-						<Link to="/about" className={styles.navItemLink}>
+						<Link
+							to="/about"
+							className={styles.navItemLink}
+							activeClassName={styles.navItemLinkActive}
+						>
 							About
 						</Link>
 					</li>
