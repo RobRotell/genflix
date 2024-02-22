@@ -61,6 +61,7 @@
 		padding: 0;
 		transform: none;
 		background-color: transparent;
+		overflow-y: initial;
 	}
 
 	&.navIsActive {
@@ -146,6 +147,12 @@
 		padding: 12px;
 		font-size: 20px;
 	}
+
+	.navItemLinkActive,
+	.subNavItemLinkActive {
+		color: var(--colorRed);
+	}
+
 
 	.subNavBtn {
 		display: flex;

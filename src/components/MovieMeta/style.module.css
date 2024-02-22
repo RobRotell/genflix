@@ -7,12 +7,14 @@
 
 	@media(width >=1024px) {
 		display: flex;
-		font-size: 24px;
+		font-size: 22px;
 	}
 
 	.metaLeft,
 	.metaRight {
-		padding-right: 36px;
+		@media(width >=1024px) {
+			padding-right: 36px;
+		}
 	}
 
 	.metaLeft {

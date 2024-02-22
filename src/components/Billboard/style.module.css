@@ -56,19 +56,19 @@
 				margin-top: 16px;
 				margin-bottom: 24px;
 				font-weight: var(--fontWeightBold);
-				font-size: 60px;
+				font-size: 50px;
 				color: var(--colorWhite);
 				text-shadow: var(--heavyTextShadow);
 
 				@media(width >=1024px) {
-					font-size: 80px;
+					font-size: 70px;
 				}
 			}
 
 			.description {
 				margin-bottom: 40px;
 				font-weight: var(--fontWeightSemiBold);
-				font-size: 22px;
+				font-size: 18px;
 				line-height: 1.4;
 				color: var(--colorWhite);
 				text-shadow: var(--heavyTextShadow);
@@ -78,7 +78,7 @@
 				}
 
 				@media(width >=1024px) {
-					font-size: 28px;
+					font-size: 24px;
 				}
 			}
 
