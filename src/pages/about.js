@@ -15,7 +15,7 @@ const AboutWrapper = styled.div`
 	color: var( --colorWhite );
 `
 
-const AboutLink = styled.a`
+const PlainLink = styled.a`
 	color: var( --colorRed );
 	text-decoration: none;
 	transition: var( --transitionSpeed ) color linear;
@@ -23,6 +23,10 @@ const AboutLink = styled.a`
 	&:hover {
 		color: var( --colorWhite );
 	}
+`
+
+const PlainHeading = styled.h2`
+	font-size: 24px;
 `
 
 
@@ -36,11 +40,11 @@ const AboutPage = () => {
 			/>
 			<FixedContainer>
 				<AboutWrapper>
-					<p>Hi there!</p>
+					<PlainHeading>Hi there!</PlainHeading>
 					<p>You might be wondering what this nonsense is all about (I ask myself that often). Back in
 						2023, to practice learning AlpineJS and OpenAI's DALL-E API, I built a site that curated
-						AI-generated movie posters, titles, and taglines: <AboutLink href="https://moovi.robr.app"
-						target="_blank">moovi.robr.app</AboutLink>. The results were bewilderingly humorous and
+						AI-generated movie posters, titles, and taglines: <PlainLink href="https://moovi.robr.app"
+						target="_blank">moovi.robr.app</PlainLink>. The results were bewilderingly humorous and
 						dreadfully frightening</p>
 					<p>Flash forward to today: I wanted to play around with GatsbyJS and I wanted the world to more
 						fully enjoy the monstrous creations from my Moovi project. This site is the fruit of those two
