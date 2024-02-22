@@ -22,11 +22,10 @@
 
 	.items {
 		display: grid;
-		gap: 10px;
+		gap: 4px;
 		grid-template-columns: repeat(2, 1fr);
 
 		@media(width >=768px) {
-			gap: 16px;
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
