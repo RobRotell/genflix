@@ -38,7 +38,8 @@
 			text-decoration: none;
 			transition: var(--transitionSpeed) color linear;
 
-			&:hover {
+			&:hover,
+			&.navItemActive {
 				color: var(--colorRed);
 			}
 		}

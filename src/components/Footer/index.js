@@ -16,6 +16,10 @@ const Footer = ({ children }) => {
 			text: 'Genres',
 		},
 		{
+			link: '/movies',
+			text: 'Movies',
+		},
+		{
 			link: '/about',
 			text: 'About',
 		}
@@ -35,6 +39,7 @@ const Footer = ({ children }) => {
 								key={navItem.link}
 								to={navItem.link}
 								className={styles.navItem}
+								activeClassName={styles.navItemActive}
 							>{navItem.text}</Link>
 						) )}
 					</nav>

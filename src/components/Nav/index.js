@@ -121,6 +121,16 @@ const Nav = ({ location: { pathname } }) => {
 
 					<li className={styles.navItem}>
 						<Link
+							to="/movies"
+							className={styles.navItemLink}
+							activeClassName={styles.navItemLinkActive}
+						>
+							Movies
+						</Link>
+					</li>
+
+					<li className={styles.navItem}>
+						<Link
 							to="/about"
 							className={styles.navItemLink}
 							activeClassName={styles.navItemLinkActive}
