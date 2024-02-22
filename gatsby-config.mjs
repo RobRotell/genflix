@@ -23,6 +23,7 @@ export default {
 		'gatsby-plugin-sharp',
 		'gatsby-transformer-sharp',
 		'gatsby-plugin-emotion',
+		'gatsby-plugin-remove-generator',
 		{
 			resolve: 'gatsby-plugin-sharp',
 			options: {
