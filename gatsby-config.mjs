@@ -62,15 +62,6 @@ export default {
 				icon: 'src/images/favicon.png',
 			},
 		},
-		// { // replaced with fontsource
-		// 	resolve: 'gatsby-plugin-google-fonts',
-		// 	options: {
-		// 		fonts: [
-		// 			'inter:400,600,700',
-		// 		],
-		// 		display: 'swap'
-		// 	}
-		// },
 		{
 			resolve: 'gatsby-source-filesystem',
 			options: {
