@@ -27,6 +27,7 @@
 		"gatsby": "^5.13.3",
 		"gatsby-plugin-emotion": "^8.13.1",
 		"gatsby-plugin-google-fonts": "^1.0.1",
+		"gatsby-plugin-google-tagmanager": "^5.13.1",
 		"gatsby-plugin-image": "^3.13.1",
 		"gatsby-plugin-manifest": "^5.13.1",
 		"gatsby-plugin-remote-images": "^3.6.6",

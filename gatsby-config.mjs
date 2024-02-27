@@ -70,5 +70,12 @@ export default {
 				fastHash: true,
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-google-tagmanager',
+			options: {
+				id: 'G-8N7ZDQM6D4',
+				includeInDevelopment: true,
+			},
+		},
 	]
 }
